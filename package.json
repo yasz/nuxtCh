@@ -1,0 +1,24 @@
+{
+  "name": "nuxtCh2",
+  "version": "1.0.0",
+  "description": "My terrific Nuxt.js project",
+  "author": "yangjiahao 00444209",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "bootstrap": "^4.2.1",
+    "bootstrap-vue": "^2.0.0-rc.11",
+    "cross-env": "^5.2.0",
+    "nuxt": "^2.0.0",
+    "vant": "^1.5.1"
+  },
+  "devDependencies": {
+    "babel-plugin-import": "^1.11.0",
+    "nodemon": "^1.11.0"
+  }
+}
