@@ -11,12 +11,13 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "ant-design-vue": "^1.2.5",
     "bootstrap": "^4.2.1",
     "bootstrap-vue": "^2.0.0-rc.11",
     "cross-env": "^5.2.0",
     "nuxt": "^2.0.0",
     "vant": "^1.5.1",
-    "vue-backtotop": "^1.6.1"
+    "vue-scrollto": "^2.13.0"
   },
   "devDependencies": {
     "babel-plugin-import": "^1.11.0",

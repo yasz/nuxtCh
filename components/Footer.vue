@@ -1,11 +1,7 @@
 <template>
-  <div>
-    <back-to-top bottom="50px" right="50px">
-      <button type="button" class="btn btn-info btn-to-top">
-        <i class="fa fa-chevron-up"></i>
-      </button>
-    </back-to-top>
 
+  <div class="main-wrapper">
+    <a-back-top/>
     <footer id="footer">
       <div class="container">
         <div class="row">
@@ -27,14 +23,6 @@
 </template>
 
 <style>
-.btn-to-top {
-  width: 60px;
-  height: 60px;
-  padding: 10px 16px;
-  border-radius: 50%;
-  font-size: 22px;
-  line-height: 22px;
-}
 
 #footer {
   background: #fff;
@@ -44,10 +32,3 @@
   font-size: 14px;
 }
 </style>
-
-<script>
-import BackToTop from "vue-backtotop"
-export default {
-  components: { BackToTop }
-};
-</script>

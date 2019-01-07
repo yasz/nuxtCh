@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="shadow-lg p-3 mb-5 bg-white rounded">
     <b-navbar toggleable="md" type="dark" variant="success" fixed="top">
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
       <b-navbar-brand href="#">Ruian Veritas</b-navbar-brand>
@@ -34,6 +34,8 @@
 
   </header>
 </template>
+
+
 <script>
 export default {
   data: function() {
