@@ -564,15 +564,21 @@ components:{
 
 import cmcc_filter from '../components/base/Filter'
 
-配置router
+router
 ==========
 
-去除\#
+`mode:'history'` `mode:'hash'`两者的区别？
 
-mode:**'history'**,
+[动态路由匹配](https://router.vuejs.org/zh/guide/essentials/dynamic-matching.html)
+
+[重定向](https://router.vuejs.org/zh/guide/essentials/redirect-and-alias.html#%E9%87%8D%E5%AE%9A%E5%90%91)
+
+
+
+`vue-router` 默认 hash 模式 —— 使用 URL 的 hash 来模拟一个完整的 URL，于是当 URL 改变时，页面不会重新加载。
 
 指令
-----
+====
 
 \<**YLyric ref="ref1"**\>\</**YLyric**\>
 

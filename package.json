@@ -15,7 +15,8 @@
     "bootstrap-vue": "^2.0.0-rc.11",
     "cross-env": "^5.2.0",
     "nuxt": "^2.0.0",
-    "vant": "^1.5.1"
+    "vant": "^1.5.1",
+    "vue-backtotop": "^1.6.1"
   },
   "devDependencies": {
     "babel-plugin-import": "^1.11.0",

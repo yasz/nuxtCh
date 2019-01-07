@@ -115,6 +115,8 @@ export default {
 </script>
 ```
 
+## 导航
+
 `componets/Nav.vue`
 
 ```vue
@@ -139,9 +141,7 @@ export default {
 
 这里做成动态的比较方便
 
-```vue
 
-```
 
 `componets/Footer.vue`
 
@@ -153,3 +153,32 @@ export default {
 </template>
 ```
 
+
+
+index是默认的内容，我们将其重定向到home
+
+```vue
+<script>
+export default {
+  fetch ({ params, redirect }) {
+    redirect(301, '/home')
+  }
+}
+</script>
+```
+
+https://github.com/nuxt/nuxt.js/issues/1843
+
+
+
+## FOOTER
+
+[back-to-top工具](https://www.npmjs.com/package/vue-backtotop)
+
+```
+yarn add vue-backtotop
+编辑D:\2.dev\h5\nuxtCh\node_modules\vue-backtotop\package.json
+增加^
+```
+
+https://yarnpkg.com/lang/zh-hans/docs/dependency-versions/

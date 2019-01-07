@@ -1,5 +1,7 @@
-<template>
-  <div>
-      <h2>index page</h2>
-  </div>
-</template>
+<script>
+export default {
+  fetch ({ params, redirect }) {
+    redirect(301, '/home')
+  }
+}
+</script>
