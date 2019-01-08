@@ -26,11 +26,23 @@ https://segmentfault.com/a/1190000011418518
 
 
 
-
-
 Element UI、vue-antd、AntDesign、vue-beauty
 
 https://github.com/iview/iview
+
+
+
+# assets/static[区别](https://segmentfault.com/q/1010000009842688)
+
+`static`放不会变动的文件 `assets`相反
+
+
+
+# 目录
+
+
+
+
 
 # 启动
 
