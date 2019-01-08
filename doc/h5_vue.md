@@ -1,12 +1,4 @@
-[在线开发工具](https://blog.csdn.net/tryto21/article/details/80235278)
-
-```
-pip3 install jupyter
-jupyter notebook --generate-config
-c.NotebookApp.notebook_dir = 'D:/2.dev/jupyter'
-```
-
-
+ 
 
 intro
 =====
@@ -40,44 +32,15 @@ vue-cli:2.9.1
 
 etltoolsUI.zip由vue cli命令来构建（webpack项目）：
 
-vue init webpack etltoolsui
 
-A newer version of vue-cli is available.
-
-latest: 2.9.2
-
-installed: 2.9.1
-
-? Project name myproject
-
-? Project description A Vue.js project
-
-? Author yasz \<yaszyoyo\@gmail.com\>
-
-? Vue build standalone
-
-? Install vue-router? Yes
-
-? Use ESLint to lint your code? No
-
-? Set up unit tests No
-
-? Pick a test runner jest
-
-? Setup e2e tests with Nightwatch? No
-
-? Should we run \`npm install\` for you after the project has been created?
-(recommended) npm
-
-vue-cli · Generated "myproject".
 
 运行本项目方法：
 
-cd my-project //进入项目目录
 
-npm install //在项目中安装依赖包
 
-npm run dev //运行项目
+```shell
+
+```
 
 包引入
 ------
