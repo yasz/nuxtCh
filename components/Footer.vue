@@ -1,6 +1,6 @@
 <template>
 
-  <div class="main-wrapper">
+  <div>
     <a-back-top/>
     <footer id="footer">
       <div class="container">

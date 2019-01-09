@@ -348,9 +348,54 @@ export default new Router({
 })
 ```
 
-
-
 增加一个css属性；
+
+
+
+```vue
+<template>
+    <a href="javascript:;" v-on:click="buttonClick($event)" v-bind:id="url" class="ybutton-icon weui-tabbar__item weui-bar__item--on">
+    <div class="weui-tabbar__icon"></div>
+    <p  class="ybutton-label weui-tabbar__label">{{text}}</p>
+    </a>
+</template>
+
+<script>
+  export default {
+    name: 'BottomTab',
+    props:['text','url'],
+    mounted:function () {
+    },
+    methods: {
+      buttonClick: function (e) {
+          /**
+           * created by yang on 17:59 2018/1/26.
+           * describtion:点击按钮触发
+           */
+          this.$emit('message', this.url )
+      }
+    }
+  }
+
+</script>
+
+```
+
+引用时
+
+```vue
+<template>
+<BottomTab v-on:message="handleRouter" :url="'/page/export'" :text="'导出'"></BottomTab>
+</template>
+<script>
+import BottomTab from '@/components/basic/BottomTab.vue';
+    export default {
+    name: 'hello',
+    components: {
+      BottomTab, YExport, YLyric, YTemplate,YAboutme
+    }
+<script>
+```
 
 
 
@@ -398,6 +443,8 @@ data: function () {
 
 
 ## props
+
+prop可作为校验器进行参数
 
 ```vue
 <script>
@@ -462,6 +509,8 @@ property based on the prop's value.
 ![](media/ccc4ae41f5982a42cae8a39ad4003dd7.png)
 
 <https://stackoverflow.com/questions/43959824/instead-use-a-data-or-computed-property-based-on-the-props-value-vue-js>
+
+# 组件
 
 ## REF
 
@@ -530,6 +579,51 @@ components:{
 双引号里还有单引号；
 
 import cmcc_filter from '../components/base/Filter'
+
+# [render](https://juejin.im/post/5a715ec96fb9a01cad7c7958)
+
+```vue
+<template>
+  <div ref="box" class="box">
+    <div class="lineF">
+     <Hexagon :bgPath="`${slide3}`"></Hexagon>
+      <Hexagon :bgPath="`${slide2}`"></Hexagon>
+      <Hexagon :bgPath="`${slide1}`"></Hexagon>
+    </div>
+    <div class="lineEven">
+      <Hexagon :bgPath="`${slide3}`"></Hexagon>
+      <Hexagon :bgPath="`${slide2}`"></Hexagon>
+      <Hexagon :bgPath="`${slide1}`"></Hexagon>
+    </div>
+    <div class="lineOdd">
+      <Hexagon :bgPath="`${slide3}`"></Hexagon>
+      <Hexagon :bgPath="`${slide2}`"></Hexagon>
+      <Hexagon :bgPath="`${slide1}`"></Hexagon>
+    </div>
+  </div>
+</template>
+
+```
+
+删除掉template；
+
+直接使用jsx
+
+```vue
+render: function (h) {
+    return h(<span>hello.render</span>)
+  }
+```
+
+https://www.cnblogs.com/moqiutao/p/8335077.html
+
+
+
+[vue-html](https://github.com/egoist/vue-html)
+
+[vue2.0 jsx语法](https://blog.csdn.net/l598465252/article/details/79724994)
+
+
 
 router
 ==========

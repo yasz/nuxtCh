@@ -1,10 +1,6 @@
 <template>
   <div>
    <HexagonNav></HexagonNav>
-    
-
-
-
   </div>
 </template>
 

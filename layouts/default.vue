@@ -6,9 +6,10 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .main-wrapper {
-    margin-top: 64px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 </style>
 
