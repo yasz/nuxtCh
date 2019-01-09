@@ -3,6 +3,7 @@ import slide3 from "~/assets/img/slides/3.jpg";
 import slide2 from "~/assets/img/slides/2.jpg";
 import slide1 from "~/assets/img/slides/1.jpg";
 import Hexagon from "~/components/base/Hexagon.vue"
+import HTML from 'vue-html'
 export default {
   components:{
     Hexagon
@@ -14,8 +15,17 @@ export default {
   }
   ,props:['hello']
   ,render: function (h,context) {
-    console.log(`hello2${context}`)
-    return (<div ref="box" class="box"><Hexagon bgPath={slide3}></Hexagon></div>)
+    //  return h`<div>z</div>`
+    let count = 9
+    let trim = (<Hexagon bgPath={slide3}></Hexagon>)
+    let a = []
+    a.push(<Hexagon bgPath={slide3}></Hexagon>)
+    a.push(<Hexagon bgPath={slide2}></Hexagon>)
+    a.push(<Hexagon bgPath={slide1}></Hexagon>)
+    
+    let head = (<div ref="box" class="box">{a}</div>)
+
+    return head
   }
   ,data: function() {
     return {
