@@ -202,3 +202,144 @@ yarn add vue-backtotop
 ```
 
 https://yarnpkg.com/lang/zh-hans/docs/dependency-versions/
+
+## 六边形侧边导航
+基础六边形
+```vue
+<template>
+    <div class="boxF">
+        <div class="boxS">
+          <div class="boxT" :style="`background-image: url(${bgPath}); background-size:cover; visibility:${visibility}`">
+            <div class="overlay">
+              <a href="#">+</a>
+            </div>
+          </div>
+        </div>
+      </div>
+</template>
+<script>
+export default {
+    name: 'Hexagon',
+    props:['bgPath','visibility'],
+}
+</script>
+
+<style scoped>
+.boxF,
+.boxS,
+.boxT,
+.overlay {
+  width: 100px;
+  height: 125px;
+  overflow: hidden;
+}
+.boxF,
+.boxS {
+  visibility: hidden;
+}
+.boxF {
+  transform: rotate(120deg);
+  float: left;
+  margin-left: 10px;
+  -ms-transform: rotate(120deg);
+  -moz-transform: rotate(120deg);
+  -webkit-transform: rotate(120deg);
+}
+.boxS {
+  transform: rotate(-60deg);
+  -ms-transform: rotate(-60deg);
+  -moz-transform: rotate(-60deg);
+  -webkit-transform: rotate(-60deg);
+}
+.boxT {
+  transform: rotate(-60deg);
+  background: no-repeat 50% center;
+  background-size: 125% auto;
+  -ms-transform: rotate(-60deg);
+  -moz-transform: rotate(-60deg);
+  -webkit-transform: rotate(-60deg);
+  visibility: visible;
+}
+.overlay {
+  transition: all 250ms ease-in-out 0s;
+  display: none;
+  position: relative;
+}
+.overlay:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.boxT:hover .overlay {
+  display: block;
+}
+.overlay a {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -16px 0 0 -16px;
+  border-radius: 3px;
+  background-color: #d3b850;
+  text-align: center;
+  line-height: 32px;
+  width: 32px;
+  height: 32px;
+  text-decoration: none;
+  color: White;
+  font-size: 18px;
+  font-weight: bolder;
+}
+</style>
+
+```
+
+```vue
+<template>
+  <div class="box">
+    <div class="lineF">
+      <Hexagon :bgPath="slide1" style="overflow:hidden;"></Hexagon>
+      <Hexagon :bgPath="slide2"></Hexagon>
+      <Hexagon :bgPath="slide3"></Hexagon>
+    </div>
+    <div class="lineEven">
+      <Hexagon :bgPath="slide2"></Hexagon>
+      <Hexagon :bgPath="slide3"></Hexagon>
+      <Hexagon :bgPath="slide1"></Hexagon>
+    </div>
+    <div class="lineOdd">
+      <Hexagon :bgPath="slide3"></Hexagon>
+      <Hexagon :bgPath="slide2"></Hexagon>
+      <Hexagon :bgPath="slide1"></Hexagon>
+    </div>
+  </div>
+</template> 
+```
+
+动态方案：
+
+- [jsx不支持动态修改props](https://react-cn.github.io/react/docs/jsx-in-depth.html)，所以初始化先定义一个基本unit；
+- 根据入参进行初始化显示不同的单元；
+  - 5
+  - 3,5
+  - 2,3,5
+  - 2,3,4,5
+  - 2,3,4,5,8
+  - 2,3,4,5,8,9
+  - 2,3,4,5,6,8,9
+  - 1,2,3,4,5,6,8,9
+  - 1,2,3,4,5,6,7,8,9
+
+```vue
+render: function(h){
+    let hgNum = this.hgNum > 9?9:this.hgNum
+// 初始化全部隐藏，有哪几个就点亮几个
+    let trim = (<Hexagon bgPath={slide3}></Hexagon>)
+    let rs = []
+    rs.push(<Hexagon visibility="hidden" bgPath={slide3}></Hexagon>)
+    rs.push(<Hexagon bgPath={slide2}></Hexagon>)
+    rs.push(<Hexagon bgPath={slide1}></Hexagon>)    
+    let rsa = (<div ref="box" class="box">{a}</div>)
+    return rsa
+  }
+```
+
+动态增加
