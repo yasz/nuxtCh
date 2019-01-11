@@ -6,13 +6,13 @@ https://down.cnwebe.com/201807/201807153321.zip
 
 https://zh.nuxtjs.org/guide/installation
 
-[hello,world](http://jspang.com/post/Nuxt.js.html#toc-821)
+[hello,nuxt.jspang](http://jspang.com/post/Nuxt.js.html#toc-821)
 
-https://segmentfault.com/a/1190000013139139
+[Nuxt.js 基础入门教程](https://segmentfault.com/a/1190000013139139)
 
 layout/default.vue引入components/Nav.vue
 
-https://blog.csdn.net/weixin_36185028/article/details/84541676
+[引入组件和公共样式](https://blog.csdn.net/weixin_36185028/article/details/84541676)
 
 https://segmentfault.com/q/1010000011799672
 
@@ -343,3 +343,32 @@ render: function(h){
 ```
 
 动态增加
+```
+render: function(h) {
+    
+    let hgNum = this.hgNum > 9 ? 9 : this.hgNum;
+    // 初始化全部隐藏，有哪几个就点亮几个
+    let ag = [
+      [5],
+      [3, 5],
+      [2, 3, 5],
+      [2, 3, 4, 5],
+      [2, 3, 4, 5, 8],
+      [2, 3, 4, 5, 8, 9],
+      [2, 3, 4, 5, 6, 8, 9],
+      [1, 2, 3, 4, 5, 6, 8, 9],
+      [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    ];
+
+    let has = [];
+    for (let i = 1; i < 10; i++) {
+      if(ag[hgNum - 1].includes(i)){
+        has.push(<Hexagon bgPath={slide2} visibility="visible" />);
+      }else{
+
+        console.log(i)
+        console.log(ag[hgNum - 1])
+        has.push(<Hexagon bgPath={slide1} visibility="hidden" />);
+      }
+    }
+```
