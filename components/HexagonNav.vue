@@ -1,34 +1,59 @@
+
 <script>
 import slide3 from "~/assets/img/slides/3.jpg";
 import slide2 from "~/assets/img/slides/2.jpg";
 import slide1 from "~/assets/img/slides/1.jpg";
-import Hexagon from "~/components/base/Hexagon.vue"
-import HTML from 'vue-html'
+import Hexagon from "~/components/base/Hexagon.vue";
 export default {
-  components:{
+  components: {
     Hexagon
-  }
-  ,mounted: function () {
+  },
+  mounted: function() {
     // 基于入参动态生成模板
-    console.log(`hello ${this.$refs.box}`)
 
-  }
-  ,props:['hello']
-  ,render: function (h,context) {
-    //  return h`<div>z</div>`
-    let count = 9
-    let trim = (<Hexagon bgPath={slide3}></Hexagon>)
-    let a = []
-    a.push(<Hexagon bgPath={slide3}></Hexagon>)
-    a.push(<Hexagon bgPath={slide2}></Hexagon>)
-    a.push(<Hexagon bgPath={slide1}></Hexagon>)
+    console.log(`hello ${this.$refs.box}`);
+  },
+  props: ["hello"],
+  render: function(h) {
     
-    let head = (<div ref="box" class="box">{a}</div>)
+    let hgNum = this.hgNum > 9 ? 9 : this.hgNum;
+    // 初始化全部隐藏，有哪几个就点亮几个
+    let ag = [
+      [5],
+      [3, 5],
+      [2, 3, 5],
+      [2, 3, 4, 5],
+      [2, 3, 4, 5, 8],
+      [2, 3, 4, 5, 8, 9],
+      [2, 3, 4, 5, 6, 8, 9],
+      [1, 2, 3, 4, 5, 6, 8, 9],
+      [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    ];
 
-    return head
-  }
-  ,data: function() {
+    let has = [];
+    for (let i = 1; i < 10; i++) {
+      if(ag[hgNum - 1].includes(i)){
+        has.push(<Hexagon bgPath={slide2} visibility="visible" />);
+      }else{
+
+        console.log(i)
+        console.log(ag[hgNum - 1])
+        has.push(<Hexagon bgPath={slide1} visibility="hidden" />);
+      }
+    }
+
+    let rsa = (
+      <div ref="box" class="box">
+        <div class="lineF">{has.slice(0,3)}</div>
+        <div class="lineEven">{has.slice(3,6)}</div>
+        <div class="lineOdd">{has.slice(6,9)}</div>
+      </div>
+    );
+    return rsa;
+  },
+  data: function() {
     return {
+      hgNum: 5,
       slide3: slide3,
       slide2: slide2,
       slide1: slide1
@@ -55,6 +80,5 @@ export default {
   padding-left: 55px;
   margin-top: -30px;
 }
-
 </style>
 
