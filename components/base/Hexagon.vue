@@ -1,7 +1,7 @@
 <template>
     <div class="boxF">
         <div class="boxS">
-          <div class="boxT" :style="`background-image: url(${bgPath}); background-size:cover`">
+          <div class="boxT" :style="`background-image: url(${bgPath}); background-size:cover; visibility:${visibility}`">
             <div class="overlay">
               <a href="#">+</a>
             </div>
@@ -12,7 +12,7 @@
 <script>
 export default {
     name: 'Hexagon',
-    props:['bgPath','url'],
+    props:['bgPath','visibility'],
 }
 </script>
 
