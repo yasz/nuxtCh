@@ -1,6 +1,6 @@
 <template>
   <header class="shadow-lg p-3 mb-5 bg-white rounded">
-    <b-navbar toggleable="md" type="dark" variant="success" fixed="top">
+    <b-navbar toggleable="md" type="dark" :style="{'background-color': themeColor}" fixed="top">
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
       <b-navbar-brand href="#">Ruian Veritas</b-navbar-brand>
       <b-collapse is-nav id="nav_collapse">
@@ -35,12 +35,21 @@
   </header>
 </template>
 
+<style scoped>
+div {
+  margin: 5px;
+  line-height: 25px;
+}
+</style>
 
 <script>
+import  gConst from "~/assets/js/gConst.js";
+
 export default {
   data: function() {
     return {
-      navItems: ["home", "about", "contact"]
+      navItems: ["home", "about", "admissions"],
+      themeColor:gConst.themeColor
     };
   }
 };

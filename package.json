@@ -1,11 +1,12 @@
 {
-  "name": "nuxtCh2",
+  "name": "ruianVA",
   "version": "1.0.0",
   "description": "My terrific Nuxt.js project",
   "author": "yangjiahao 00444209",
   "private": true,
   "scripts": {
     "dev": "nuxt",
+    "debug": "node --inspect-brk=9229 node_modules/nuxt/bin/nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
@@ -15,11 +16,17 @@
     "bootstrap": "^4.2.1",
     "bootstrap-vue": "^2.0.0-rc.11",
     "cross-env": "^5.2.0",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "node-sass": "^4.11.0",
     "nuxt": "^2.0.0",
-    "vant": "^1.5.1",
+    "sass-loader": "^7.1.0",
+    "vue-outline": "^1.14.1",
     "vue-scrollto": "^2.13.0"
   },
   "devDependencies": {
+    "@nuxtjs/axios": "^5.4.1",
+    "@nuxtjs/proxy": "^1.3.3",
     "babel-plugin-import": "^1.11.0",
     "nodemon": "^1.11.0"
   }

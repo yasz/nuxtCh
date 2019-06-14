@@ -1,4 +1,3 @@
-
 <script>
 import slide3 from "~/assets/img/slides/3.jpg";
 import slide2 from "~/assets/img/slides/2.jpg";
@@ -14,8 +13,11 @@ export default {
     console.log(`hello ${this.$refs.box}`);
   },
   props: ["hello"],
+  methods:{
+    f1(){alert('hello,footer')},
+    sonFun(){alert('sofun')}
+  },
   render: function(h) {
-    
     let hgNum = this.hgNum > 9 ? 9 : this.hgNum;
     // 初始化全部隐藏，有哪几个就点亮几个
     let ag = [
@@ -35,10 +37,7 @@ export default {
       if(ag[hgNum - 1].includes(i)){
         has.push(<Hexagon bgPath={slide2} visibility="visible" />);
       }else{
-
-        console.log(i)
-        console.log(ag[hgNum - 1])
-        has.push(<Hexagon bgPath={slide1} visibility="hidden" />);
+        has.push(<Hexagon bgPath={slide1} visibility="hidden"/>);        
       }
     }
 
@@ -47,13 +46,14 @@ export default {
         <div class="lineF">{has.slice(0,3)}</div>
         <div class="lineEven">{has.slice(3,6)}</div>
         <div class="lineOdd">{has.slice(6,9)}</div>
+        
       </div>
     );
     return rsa;
   },
   data: function() {
     return {
-      hgNum: 5,
+      hgNum: 9,
       slide3: slide3,
       slide2: slide2,
       slide1: slide1

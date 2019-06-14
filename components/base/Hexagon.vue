@@ -1,19 +1,28 @@
 <template>
-    <div class="boxF">
-        <div class="boxS">
-          <div class="boxT" :style="`background-image: url(${bgPath}); background-size:cover; visibility:${visibility}`">
-            <div class="overlay">
-              <a href="#">+</a>
-            </div>
-          </div>
+  <div class="boxF">
+    <div class="boxS">
+      <div
+        class="boxT"
+        :style="`background-image: url(${bgPath}); background-size:cover; visibility:${visibility}`"
+        @click="sonFun(bgPath)"
+      >
+        <div class="overlay">
+          <!-- <a href="#">+</a> -->
         </div>
       </div>
+    </div>
+  </div>
 </template>
 <script>
 export default {
-    name: 'Hexagon',
-    props:['bgPath','visibility'],
-}
+  name: "Hexagon",
+  props: ["bgPath", "visibility"],
+  methods:{
+    sonFun(param){
+      alert("HELLO"+param)
+    }
+  }
+};
 </script>
 
 <style scoped>

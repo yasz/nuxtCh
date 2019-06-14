@@ -7,10 +7,12 @@
 </template>
 
 <style scoped>
-.main-wrapper {
+
+/* .main-wrapper {
     padding-top: 10px;
     padding-bottom: 10px;
-}
+    
+} */
 </style>
 
 <script>
