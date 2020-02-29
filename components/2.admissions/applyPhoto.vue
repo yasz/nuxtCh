@@ -28,6 +28,7 @@ export default {
       }
       if (info.file.status === "done") {
         this.$message.success(`${info.file.name} file uploaded successfully`);
+        this.fileFlag = info.file.response
       } else if (info.file.status === "error") {
         this.$message.error(`${info.file.name} file upload failed.`);
       }

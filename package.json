@@ -12,17 +12,19 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "ant-design-vue": "^1.2.5",
+    "ant-design-vue": "^1.4.10",
     "bootstrap": "^4.2.1",
-    "bootstrap-vue": "^2.0.0-rc.11",
+    "bootstrap-vue": "^2.3.0",
     "cross-env": "^5.2.0",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "node-sass": "^4.11.0",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.11.0",
     "sass-loader": "^7.1.0",
+    "vue": "2.6.11",
     "vue-outline": "^1.14.1",
-    "vue-scrollto": "^2.13.0"
+    "vue-scrollto": "^2.13.0",
+    "vue-server-renderer": "2.6.11"
   },
   "devDependencies": {
     "@nuxtjs/axios": "^5.4.1",
